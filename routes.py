@@ -493,7 +493,7 @@ def guest_update():
         user_profiles_session.close()
         return jsonify({"Message": "Guest updated successfully"})
     else:
-        session.close()
+        user_profiles_session.close()
         return jsonify({"Message": "Guest not found"}), 404
 
 @app.route("/update_service_end_time", methods=["POST"])
