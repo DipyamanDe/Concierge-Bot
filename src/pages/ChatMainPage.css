@@ -1,0 +1,9 @@
+.absolute {
+    position: absolute;
+    right: 0%;
+  }
+  .expanded-chat-container {
+    width: 500px; 
+    height: 500px; 
+
+  }

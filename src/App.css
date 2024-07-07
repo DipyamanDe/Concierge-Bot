@@ -1,0 +1,465 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url('../src/images/itc.jpg');
+    
+    /* background-repeat: no-repeat; */
+    
+    /* position: relative; */
+     /* Ensure that the background covers the entire viewport height */
+    font-family: 'Your Chosen Font', sans-serif; /* Add your preferred font-family */
+    background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  font-family: Arial, sans-serif; /* Adjust the font-family as needed */
+}
+.App {
+    text-align: center;
+  }
+ 
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  .fixed {
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  }
+  
+  .fixed.translate-x-96 {
+    opacity: 0;
+  }
+  
+ 
+  /* ChatPage.css */
+ 
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* align-items: center; */
+    height: 80vh;
+    background-color: #f5f5f5;
+    width: 60%; /*Adjust the width as needed*/
+    margin: 0 auto; /* Center the chat horizontally */
+    margin-top: 10px;
+    border-radius: 20px;
+  }
+ 
+  .chat-messages {
+    /* flex: 1; */
+    /* max-width: 80%; Adjust the width of the chat messages container */
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  .message {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    padding: 2%;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 5px;
+   
+  }
+ 
+  .user {
+   
+    color: #292d32;
+    justify-content: right;
+    align-self: flex-end;
+ 
+  }
+ 
+  .message.user {
+    align-self: self-end;
+   
+}
+.message.bot {
+  align-self: self-start;
+  background-color: #708090;
+  color: #fff;
+}
+  .bot {
+    /* align-self: flex-end;
+     */
+     justify-content: left;
+ 
+  }
+ 
+  .input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    width: 80%; /* Adjust the width of the input container */
+    max-width: 80%; /* Limit the maximum width */
+    margin: 0 auto; /* Center the input container */
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+ 
+  input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin-right: 10px;
+    border-radius: 5px;
+  }
+ 
+  .send-button {
+    background-color: #708090;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+ 
+  .profile-icon {
+    position: absolute;
+    top: 20px; /* Adjust the top position as needed */
+    right: 20px; /* Adjust the right position as needed */
+    cursor: pointer;
+    border: 2px solid #708090;
+    border-radius: 50%;
+    padding:10px;
+  }
+ 
+  .precheckin-button{
+    position: absolute;
+    top: 30px; /* Adjust the top position as needed */
+    right: 100px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #708090;
+    border-radius: 7.5px;
+    border: 0ch;
+    padding:10px;
+    font-size: large;
+ 
+  }
+ 
+ 
+  /* App.css */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+  }
+ 
+  .button-container {
+    display: flex;
+    flex-direction: row;
+  }
+ 
+  .custom-button {
+    color: white;
+    background-color: #708090;
+    border: none;
+    margin-right: 10px;
+    transition: background-color 0.3s; /* Add a transition for smoother hover effect */
+  }
+ 
+  .custom-button:hover {
+    background-color: #d9006c; /* Change to the PwC pink color on hover */
+  }
+ 
+  .notification {
+    margin-top: 10px; /* Add some margin to push the notification below the buttons */
+  }
+ 
+ 
+ 
+  /* Dropdown menu styles */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+ 
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+      top:14%;
+      left:2%;
+  }
+ 
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+ 
+  .dropdown-content a:hover {
+    background-color: #d9006c; /* PwC pink on hover */
+    color: white;
+  }
+ 
+  .show {
+    display: block;
+  }
+ 
+ 
+  /* Add this CSS to your stylesheet */
+ 
+  /* Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure it's above other content */
+  }
+ 
+  /* Popup */
+  .popup {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Drop shadow for depth */
+    z-index: 1001; /* Ensure it's above the overlay */
+  }
+ 
+  .close-button {
+    background-color: #ff6b6b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #23272c;
+    color: #fff;
+    padding: 10px 20px;
+  }
+ 
+  .iconContainer {
+    cursor: pointer;
+    margin-right: 20px;
+  }
+ 
+  .icon {
+    font-size: 24px;
+  }
+ 
+ 
+  .left-panel {
+    position: absolute;
+    top: 40px; /* Adjust the distance from the top */
+    left: 0;
+    width: 200px; /* Adjust the width of the panel */
+    background-color: #f0f0f0ba;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+ 
+  .left-panel.open {
+    transform: translateX(0);
+  }
+ 
+  .left-panel button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    margin: 6px 0;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+ 
+  .left-panel button:hover {
+    background-color: #e0e0e0;
+  }
+ 
+  .center-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .texty{
+ 
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+      margin-right: 10px;
+      border-radius: 5px;
+ 
+  }
+ 
+/* Define the class for the active state */
+.active-button {
+  /* text-decoration: underline; */
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+  font-size: larger;
+}
+/* App.css */
+ 
+/* App.css */
+ 
+.text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: transparent; /* Set your desired background color */
+}
+ 
+.animated-text {
+  font-size: 24px; /* Set your desired font size */
+  text-align: center;
+  border: 2px solid #333; /* Add a border for text container (optional) */
+  padding: 20px;
+  background-color: #ffffff7f; /* Set your desired background color */
+  animation: fade 2s ease-in-out; /* Define the animation */
+  max-width: 80%; /* Limit the width of the text container */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+ 
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Add this to your existing CSS file or create a new one */
+
+/* Modal Styles */
+/* Add these styles to center the modal and style the button */
+/* .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal-box {
+  text-align: center;
+}
+
+/* .modal-button {
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+ 
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+ 
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+}
+ 
+.tick {
+  font-size: 40px;
+  color: #4CAF50;
+   text-align: center; 
+  margin-top: 20px;
+  animation: tickAnimation 0.5s ease-out 1s forwards;
+}
+ 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+ 
+@keyframes tickAnimation {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.pay-now,
+.pay-later {
+  background-color: #4CAF50; /* Green background for Pay Now */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.pay-later {
+  background-color: #f44336; /* Red background for Pay Later */
+}
